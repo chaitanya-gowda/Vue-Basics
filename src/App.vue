@@ -14,8 +14,10 @@
     <StudyVue /> -->
     <!-- <hr />
     <ReplacingMethods /> -->
+    <!-- <hr />
+    <MentluCode /> -->
     <hr />
-    <MentluCode />
+    <ParentComponent />
   </div>
 </template>
 
@@ -24,6 +26,7 @@ import HelloWorld from './components/HelloWorld.vue';
 import MentluCode from './components/ChaithraStudyVue.vue';
 import StudyVue from './components/StudyVue.vue';
 import ReplacingMethods from './components/ReplacingMethods.vue';
+import ParentComponent from './components/ParentComponent.vue';
 import { ref, reactive } from 'vue';
 // reactive is explicitly made for objects,
 // hence we must pass an object to reactive
@@ -35,6 +38,7 @@ export default {
     StudyVue,
     ReplacingMethods,
     MentluCode,
+    ParentComponent,
   },
   created() {
     console.log('created');
