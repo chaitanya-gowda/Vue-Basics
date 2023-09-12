@@ -10,17 +10,26 @@
     <h6 class="user">Watch : {{ watchData }}</h6>
     <!-- <input type="text" placeholder="enter name" v-model="compUser" /> -->
     <!-- <h1>{{ userFirstName }}</h1> -->
-    <input type="text" placeholder="enter name" ref="userFirstName" />
+    <input type="text" placeholder="first name" v-model="firstName" />
+    <input type="text" placeholder="last name" ref="userLastName" />
     <button @click="setName">Methods : SetName</button>
+    <user-data
+      :firstName="firstName"
+      :lastName="user.name"
+      :userAge="user.age"
+    />
   </div>
 </template>
 
 <script>
-import { ref, reactive, watch, computed } from 'vue';
+import { ref, reactive, watch, computed, provide } from 'vue';
+import UserData from './UserData.vue';
 
 export default {
   name: 'Mentlu Code',
-  components: {},
+  components: {
+    'user-data': UserData,
+  },
   props: [],
   setup() {
     // 'this' keyword cannot be used in setup
@@ -30,8 +39,10 @@ export default {
       name: 'thanu',
       age: -2,
     });
+
+    const firstName = ref('');
     // template ref
-    const userFirstName = ref(null);
+    const userLastName = ref(null);
 
     //computed
     const compUser = ref('');
@@ -46,6 +57,9 @@ export default {
       age: 27,
     });
     console.log('ref value', users.value);
+
+    //provide
+    provide('user-age', user);
     // setTimeout(() => {
     //   users.value = users.value.map((value) => value + ' loose');
 
@@ -72,16 +86,17 @@ export default {
 
     function setName() {
       console.log('clicked');
-      // user.value.name = 'thanu';
+      user.value.name = userLastName.value.value;
       // reactiveUser.name = 'chaithra';
-      console.log('data', userFirstName.value);
-      watchData.value = userFirstName.value.value;
+
+      console.log('data', userLastName.value);
+      watchData.value = userLastName.value.value;
       // userFirstName.value = {
       //   innerHTML: 'Hi mentlu',
       //   nodeType: 1,
       //   tagName: 'h1',
       // };
-      console.log('userFirstName.value', userFirstName.value);
+      // console.log('userFirstName.value', userFirstName.value);
     }
     // function setOnChange(event) {
     //   compUser.value = event.target.value;
@@ -97,6 +112,7 @@ export default {
 
     // setup return
     return {
+      firstName,
       users,
       reactiveUser,
       user,
@@ -104,7 +120,7 @@ export default {
       compUser,
       computedData,
       watchData,
-      userFirstName,
+      userLastName,
     };
   },
 };
