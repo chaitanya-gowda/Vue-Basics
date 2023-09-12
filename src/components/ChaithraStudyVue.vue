@@ -1,14 +1,16 @@
 <template>
   <div>
     <!-- <h6 class="user">ref : {{ users }}</h6> -->
-    <h6 class="user">reactive : {{ reactiveUser.name }}</h6>
+    <!-- <h6 class="user">reactive : {{ reactiveUser.name }}</h6> -->
     <!-- <h6 class="user">ref : {{ user.name }}</h6> -->
 
     <!--
     <h6 class="user">Computed : {{ computedData }}</h6>
     -->
-    <!-- <h6 class="user">Watch : {{ watchData }}</h6> -->
+    <h6 class="user">Watch : {{ watchData }}</h6>
     <!-- <input type="text" placeholder="enter name" v-model="compUser" /> -->
+    <!-- <h1>{{ userFirstName }}</h1> -->
+    <input type="text" placeholder="enter name" ref="userFirstName" />
     <button @click="setName">Methods : SetName</button>
   </div>
 </template>
@@ -28,6 +30,8 @@ export default {
       name: 'thanu',
       age: -2,
     });
+    // template ref
+    const userFirstName = ref(null);
 
     //computed
     const compUser = ref('');
@@ -69,7 +73,15 @@ export default {
     function setName() {
       console.log('clicked');
       // user.value.name = 'thanu';
-      reactiveUser.name = 'chaithra';
+      // reactiveUser.name = 'chaithra';
+      console.log('data', userFirstName.value);
+      watchData.value = userFirstName.value.value;
+      // userFirstName.value = {
+      //   innerHTML: 'Hi mentlu',
+      //   nodeType: 1,
+      //   tagName: 'h1',
+      // };
+      console.log('userFirstName.value', userFirstName.value);
     }
     // function setOnChange(event) {
     //   compUser.value = event.target.value;
@@ -92,6 +104,7 @@ export default {
       compUser,
       computedData,
       watchData,
+      userFirstName,
     };
   },
 };

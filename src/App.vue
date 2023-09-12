@@ -12,10 +12,10 @@
 
     <!-- <hr />
     <StudyVue /> -->
-    <hr />
-    <ReplacingMethods />
     <!-- <hr />
-    <MentluCode /> -->
+    <ReplacingMethods /> -->
+    <hr />
+    <MentluCode />
   </div>
 </template>
 
