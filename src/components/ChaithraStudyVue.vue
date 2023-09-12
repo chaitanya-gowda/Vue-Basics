@@ -1,13 +1,15 @@
 <template>
   <div>
     <!-- <h6 class="user">ref : {{ users }}</h6> -->
-    <!-- <h6 class="user">reactive : {{ reactiveUser.name }}</h6>-->
-    <!-- <h6 class="user">ref : {{ user.name }}</h6>
-   
-    <h6 class="user">Computed : {{ computedData }}</h6> -->
-    <h6 class="user">Watch : {{ watchData }}</h6>
+    <h6 class="user">reactive : {{ reactiveUser.name }}</h6>
+    <!-- <h6 class="user">ref : {{ user.name }}</h6> -->
+
+    <!--
+    <h6 class="user">Computed : {{ computedData }}</h6>
+    -->
+    <!-- <h6 class="user">Watch : {{ watchData }}</h6> -->
     <!-- <input type="text" placeholder="enter name" v-model="compUser" /> -->
-    <button @click="setName">Methods : SetUserName</button>
+    <button @click="setName">Methods : SetName</button>
   </div>
 </template>
 
@@ -23,7 +25,7 @@ export default {
     console.log(' chaithra setup created');
     const users = ref(['chaithra', 'chaitanya']);
     const user = ref({
-      name: 'chaithra',
+      name: 'thanu',
       age: -2,
     });
 
@@ -36,7 +38,7 @@ export default {
     // reactive
 
     const reactiveUser = reactive({
-      name: 'chaithra',
+      name: 'thanu',
       age: 27,
     });
     console.log('ref value', users.value);
@@ -56,8 +58,8 @@ export default {
 
     // })
 
-    // watch
-    watch(watchData, function (newValue, oldValue) {
+    // watch;
+    watch(reactiveUser.name, function (newValue, oldValue) {
       console.log('old value', oldValue);
       console.log('new value', newValue);
     });
@@ -67,7 +69,7 @@ export default {
     function setName() {
       console.log('clicked');
       // user.value.name = 'thanu';
-      watchData.value = 'chaithra';
+      reactiveUser.name = 'chaithra';
     }
     // function setOnChange(event) {
     //   compUser.value = event.target.value;

@@ -13,7 +13,7 @@
     <p>{{ user }}</p>
     <h2>age: {{ user.age }}</h2>
     <!-- <button @click="user.age = 33">Change Age</button> -->
-    <button @click="setAge">Change Age</button>
+    <button @click="setNewAge">Change Age</button>
     <div>
       <!-- <input type="text" placeholder="First Name" @input="setFirstName" /> -->
       <input type="text" placeholder="First Name 2 way" v-model="firstName" />
@@ -52,8 +52,8 @@ export default {
     const lastName = ref('');
 
     watch(firstName.value, function (newValue, oldValue) {
-      console.log('old age', +oldValue);
-      console.log('new age', +newAge);
+      console.log('old age', oldValue);
+      console.log('new age', newValue);
     });
     const user = ref({
       name: 'kaadpapu',
@@ -64,17 +64,22 @@ export default {
       age: 27,
     });
 
-    watch(user, function (newValue, oldValue) {
-      console.log('old age', +oldValue);
-      console.log('new age', +newAge);
+    watch(user.value, function (newValue, oldValue) {
+      console.log('old user value', oldValue);
+      console.log('new user value', newValue);
     });
 
-    watch(user.age, firstName, function (newValue, oldValue) {
-      console.log('old age', +oldValue[0]);
-      console.log('new age', +newAge[0]);
-      console.log('old name', +oldValue[1]);
-      console.log('new name', +newAge[1]);
-    });
+    // watch(userReactive, function (newValue, oldValue) {
+    //   console.log('userReactive old value', oldValue);
+    //   console.log('userReactive  new value', newValue);
+    // });
+
+    // watch([user.age, firstName], function (newValue, oldValue) {
+    //   console.log('old value', oldValue[0]);
+    //   console.log('new value', newValue[0]);
+    //   console.log('old value', newValue[1]);
+    //   console.log('new value', newValue[1]);
+    // });
 
     // const userRefs = toRefs(user);
 
