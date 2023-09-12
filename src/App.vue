@@ -11,11 +11,11 @@
     <h2>age: {{ user.age }}</h2> -->
 
     <!-- <hr />
-    <StudyVue />
+    <StudyVue /> -->
     <hr />
-    <ReplacingMethods />  -->
-    <hr />
-    <MentluCode />
+    <ReplacingMethods />
+    <!-- <hr />
+    <MentluCode /> -->
   </div>
 </template>
 
