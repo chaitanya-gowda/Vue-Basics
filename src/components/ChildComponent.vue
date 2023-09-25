@@ -1,7 +1,7 @@
 <template>
   <h1>Hi its Child Component</h1>
   <h2>{{ userName }}</h2>
-  <h3>Using provide/inject: {{ firstName.name }}</h3>
+  <h3>Using provide/inject: {{ name.name }}</h3>
 </template>
 <script>
 import {
@@ -32,7 +32,7 @@ export default {
   // },
 
   // inject option
-  inject: [name],
+  inject: ['name'],
 
   // setup accepts two arguments first is props and the latter is context
 

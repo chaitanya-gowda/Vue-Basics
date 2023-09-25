@@ -100,7 +100,7 @@ export default {
       );
     });
     // provide a value by providing two arguments to provide ==> firstone is key of our choice, second is actual value we wanna provide
-    provide('firstName', firstNameRef);
+    provide('name', firstNameRef);
 
     // since ref is passed the place where we inject would automatically update the changes
 
