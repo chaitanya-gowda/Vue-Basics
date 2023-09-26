@@ -8,10 +8,10 @@
 import { computed, inject } from 'vue';
 export default {
   name: 'UserData',
-  props: ['firstName', 'lastName', 'userAge'],
-  setup(paapu, context) {
+  props: ['firstName', 'lastName', 'userAgeData'],
+  setup(props, context) {
     const user = computed(() => {
-      return paapu.firstName + '' + paapu.lastName;
+      return props.firstName + '' + props.lastName;
     });
     //inject
     const age = inject('user-age');
