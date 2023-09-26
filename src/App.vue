@@ -15,7 +15,7 @@
     <!-- <hr />
     <ReplacingMethods /> -->
     <!-- <hr />
-    <MentluCode /> -->
+    <ChaithraStudyVue /> -->
     <hr />
     <ParentComponent />
   </div>
@@ -23,7 +23,7 @@
 
 <script>
 import HelloWorld from './components/HelloWorld.vue';
-import MentluCode from './components/ChaithraStudyVue.vue';
+import ChaithraStudyVue from './components/ChaithraStudyVue.vue';
 import StudyVue from './components/StudyVue.vue';
 import ReplacingMethods from './components/ReplacingMethods.vue';
 import ParentComponent from './components/ParentComponent.vue';
@@ -37,7 +37,7 @@ export default {
     HelloWorld,
     StudyVue,
     ReplacingMethods,
-    MentluCode,
+    ChaithraStudyVue,
     ParentComponent,
   },
   created() {

@@ -16,7 +16,7 @@
     <user-data
       :firstName="firstName"
       :lastName="user.name"
-      :userAge="user.age"
+      :userAgeData="user.age"
     />
   </div>
 </template>
@@ -26,7 +26,7 @@ import { ref, reactive, watch, computed, provide } from 'vue';
 import UserData from './UserData.vue';
 
 export default {
-  name: 'Mentlu Code',
+  name: 'MainCOmponent',
   components: {
     'user-data': UserData,
   },
@@ -34,9 +34,9 @@ export default {
   setup() {
     // 'this' keyword cannot be used in setup
     console.log(' chaithra setup created');
-    const users = ref(['chaithra', 'chaitanya']);
+    const users = ref(['firstname', 'secondname']);
     const user = ref({
-      name: 'thanu',
+      name: 'firstname',
       age: -2,
     });
 
@@ -48,12 +48,12 @@ export default {
     const compUser = ref('');
 
     // watch
-    const watchData = ref('thanu');
+    const watchData = ref('firstname');
 
     // reactive
 
     const reactiveUser = reactive({
-      name: 'thanu',
+      name: 'firstname',
       age: 27,
     });
     console.log('ref value', users.value);
@@ -61,14 +61,14 @@ export default {
     //provide
     provide('user-age', user);
     // setTimeout(() => {
-    //   users.value = users.value.map((value) => value + ' loose');
+    //   users.value = users.value.map((value) => value + ' hii');
 
     //   //reactiveUser
-    //   reactiveUser.name = reactiveUser.name + ' mentlu';
+    //   reactiveUser.name = reactiveUser.name + ' hello';
     //   reactiveUser.age = 28;
 
     //   // refUser
-    //   user.value.name = user.value.name + ' Hahaha';
+    //   user.value.name = user.value.name + ' data';
     // }, 2000);
 
     // const computedValue: computed(()=>{
@@ -87,12 +87,12 @@ export default {
     function setName() {
       console.log('clicked');
       user.value.name = userLastName.value.value;
-      // reactiveUser.name = 'chaithra';
+      // reactiveUser.name = 'secondname';
 
       console.log('data', userLastName.value);
       watchData.value = userLastName.value.value;
       // userFirstName.value = {
-      //   innerHTML: 'Hi mentlu',
+      //   innerHTML: 'Hi Vue',
       //   nodeType: 1,
       //   tagName: 'h1',
       // };
